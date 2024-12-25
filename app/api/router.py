@@ -23,7 +23,7 @@ async def get_weather(city: str = Query(...)):
         cached_data_url = await get_last_cached_record_by_city(city)
         if cached_data_url:
             cached_response = await get_cached_response_from_s3(cached_data_url)
-            return {"message": "Cache hit", "weather_data": cached_response, "s3_url": cached_data_url}
+            return cached_response
 
         # Fetch weather data
         response = await fetch_weather_by_city(city)
