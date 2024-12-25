@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  fastapi:
+    build: .
+    container_name: fastapi-weather
+    ports:
+        - "5000:5000"
+    environment:
+      - SETUP_SERVICES=${SETUP_SERVICES:-False}
+    volumes:
+        - ./logs:/app/logs
+    command: poetry run uvicorn app.main:app --host 0.0.0.0 --port 5000 --reload

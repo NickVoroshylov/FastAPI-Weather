@@ -1,0 +1,42 @@
+# Python bytecode files
+*.pyc
+*.pyo
+__pycache__/
+
+# Virtual environment
+venv/
+.env/
+
+# FastAPI migrations (if using Alembic or similar tools)
+migrations/
+
+# Database files
+*.sqlite3
+db.sqlite3
+
+# Logs
+logs/
+
+# Cache files
+*.db
+*.log
+*.pot
+
+# IDE/editor-specific files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Python egg and distribution files
+*.egg
+*.egg-info/
+dist/
+build/
+
+# Environment variable files
+*.env
+
+# mypy
+.mypy_cache/
+.dmypy.json

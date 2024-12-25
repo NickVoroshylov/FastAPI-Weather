@@ -1,0 +1,44 @@
+[tool.poetry]
+name = "Fastapi Weather"
+version = "0.1.0"
+description = "A FastAPI Weather project"
+license = "MIT"
+readme = "README.md"
+authors = ["Your Name <your.email@example.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.115.6"
+pydantic = "^2.10.3"
+uvicorn = {extras = ["standart"], version = "^0.34.0"}
+python-dotenv = "^1.0.1"
+aiohttp = "^3.11.11"
+aioboto3 = "^13.3.0"
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.10.0"
+flake8 = "^7.1.1"
+isort = "^5.13.2"
+
+[build-system]
+requires = ["poetry>=1.1.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 120
+target-version = ["py311"]
+exclude = """
+/(
+    | __pycache__
+    | build
+    | dist
+)/
+"""
+
+[tool.isort]
+profile = "black"
+line_length = 120
+known_first_party = ["app"]
+known_third_party = ["fastapi", "boto3", "uvicorn"]
+default_section = "THIRDPARTY"
+src_paths = ["app"]
