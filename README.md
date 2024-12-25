@@ -42,6 +42,13 @@ This project is a Weather API service built with **FastAPI**. It integrates with
      S3_BUCKET_NAME=your_s3_bucket_name
      ```
 
+For S3 bucket and DynamoDB please check the naming rules if you are not sure. Here is the main rules:
+
+- Bucket names must be between 3 (min) and 63 (max) characters long.
+- Bucket names can consist only of lowercase letters, numbers, dots (.), and hyphens (-).
+- Bucket names must begin and end with a letter or number.
+- Table names and index names must be between 3 and 255 characters long, and can contain only a-z, A-Z, 0-9, underscore, underscore, dot.
+
 ---
 
 ## Project Setup
@@ -81,6 +88,13 @@ Once the server is running, you can access the interactive API documentation thr
 
 ---
 
+## API Documentation
+
+If you want to pass parameters through url, just use next url
+
+http://localhost:5000/weather?city=city_name
+  
+---
 ## Code Formatting and Linting
 
 This project uses **Black** for code formatting and **isort** for import sorting. Follow these steps to ensure your code adheres to the project's standards:
